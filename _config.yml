@@ -83,7 +83,7 @@ footer:
       url: "https://github.com/smartdogX"
     - label: "E-mail"
       icon: "fa fa-envelope"
-      url: "zkx5112@psu.edu"
+      url: "mailto:zkx5112@psu.edu"
 
 defaults:
   # _posts
