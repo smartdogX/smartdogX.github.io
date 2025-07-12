@@ -13,16 +13,20 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Personal website of SmartdogX
+email: zkx5112@psu.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  This is an awesome description.
 twitter_username: username
 github_username: username
 minimal_mistakes_skin: default
 search: true
+# 网址配置 (非常重要!)
+# 对于你的个人主页(username.github.io)，下面两项通常这样配置：
+url: "https://smartdogX.github.io"     # 网站的完整地址，把“你的用户名”换成你自己的
+baseurl: ""                         # 留空即可
+
+
 
 # Build settings
 markdown: kramdown
