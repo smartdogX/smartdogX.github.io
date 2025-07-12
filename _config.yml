@@ -18,7 +18,7 @@ email: zkx5112@psu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This is an awesome description.
 twitter_username: username
-github_username: username
+github_username: smartdogX
 minimal_mistakes_skin: default
 search: true
 # 网址配置 (非常重要!)
@@ -63,7 +63,7 @@ plugins:
 
 author:
   name   : "Zhiyuan Xi"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/profile_photo.webp"
   bio    : "Never give up! Never, never, never."
   links:
     - label: "Website"
