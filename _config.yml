@@ -73,7 +73,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/smartdogX"
     - label: "E-mail"
-      icon: "fab fa-solid fa-envelope"
+      icon: "fa fa-envelope"
       url: "zkx5112@psu.edu"
 
 footer:
@@ -82,7 +82,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/smartdogX"
     - label: "E-mail"
-      icon: "fab fa-solid fa-envelope"
+      icon: "fa fa-envelope"
       url: "zkx5112@psu.edu"
 
 defaults:
