@@ -66,8 +66,8 @@ author:
   avatar : "/assets/images/profile_photo.webp"
   bio    : "Never give up! Never, never, never."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    - label: "Wordpress"
+      icon: "fab fa-fw fa-wordpress"
       url: "https://smartdogxzy.wordpress.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
