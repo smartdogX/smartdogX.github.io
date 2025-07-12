@@ -18,10 +18,9 @@ This website is a personal website for me to publish some blogs. You can also fi
 - Electronic transport under ultra-low temperature
 
 ### Hobbies
-- All kinds of chess.
-- Table tennis.
-- Physics.
-- Program.
+- All kinds of chess
+- Table tennis
+- Football
 
 ### Awards
 - The Third Prize of Peking University Scholarship 2022
