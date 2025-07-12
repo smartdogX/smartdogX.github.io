@@ -13,7 +13,7 @@ This website is a personal website for me to publish some blogs. You can also fi
 - 2025-persent Ph.D. in phyiscs, The Pennsylvania State University.
 
 ### Research interest
-- Topological insulators
+- Topological insulators and quantum anomalous Hall effect
 - Superconductivity, Josephson juction and Majorana physics
 - Electronic transport under ultra-low temperature
 
