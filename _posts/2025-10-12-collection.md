@@ -15,7 +15,7 @@ But today I was inspired by my friends, and now I decide to move them here.
 Currently I plan to create a new WorldPress website via my PSU account. 
 I will keep that site as a more formal site and post 
 some posts related to research there. Actually, I am transferring my research diary to that 
-site. And I am going to keep this site to post some more personally stuffs.
+site. And I am going to keep this site to post some more personal stuffs.
 
 ## 2024-08-16 07:51:25
 
