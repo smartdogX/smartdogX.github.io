@@ -4,7 +4,7 @@ last_modified_at: 2025-09-07T22:27:02-04:00
 categories:
   - Blog
 tags:
-  - standard
+  - life
 ---
 
 It has been two weeks since this semester began. In general, I feel that I have been doing well.
