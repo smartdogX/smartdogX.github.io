@@ -1,5 +1,5 @@
 ---
-title: Some random thoughts
+title: Some random thoughts2
 last_modified_at: 2025-09-07T22:27:02-04:00
 categories:
   - Blog
