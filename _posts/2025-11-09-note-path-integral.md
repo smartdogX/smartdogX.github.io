@@ -6,6 +6,12 @@ categories:
   - Notes
 tags:
   - Physics
+defaults:
+  - scope:
+      path: ""   # all files
+      type: Notes
+    values:
+      mathjax: true
 ---
 
 ## path integral
