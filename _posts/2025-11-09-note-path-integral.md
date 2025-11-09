@@ -1,5 +1,6 @@
 ---
 title: Notes-Path integral
+mathjax: true
 last_modified_at: 2025-11-09T11:54:02-04:00
 categories:
   - Notes
