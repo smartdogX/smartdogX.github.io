@@ -71,6 +71,9 @@ author:
     - label: "Wordpress"
       icon: "fab fa-fw fa-wordpress"
       url: "https://sites.psu.edu/smartdpgxzy/"
+    - label: "Google scholar"
+      icon: "fa-brands fa-google-scholar"
+      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AElLoL0HU6UFhELGmNjZiE8h5PDubj4FH2xIR3V6B91k9R-VLLCvZk5fyYAMML_o-1_dofpnCvhG_qd8IfZVUw&user=tS8aCiAAAAAJ"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/smartdogX"
@@ -86,12 +89,16 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/smartdogX"
+    - label: "Google scholar"
+      icon: "fa-brands fa-google-scholar"
+      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AElLoL0HU6UFhELGmNjZiE8h5PDubj4FH2xIR3V6B91k9R-VLLCvZk5fyYAMML_o-1_dofpnCvhG_qd8IfZVUw&user=tS8aCiAAAAAJ"
     - label: "Zhihu"
       icon: "fab fa-fw fa-zhihu"
       url: "https://www.zhihu.com/people/xzy-48-9"
     - label: "E-mail"
       icon: "fa fa-fw fa-envelope"
       url: "mailto:zkx5112@psu.edu"
+    
 
 defaults:
   # _posts
