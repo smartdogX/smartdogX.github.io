@@ -7,7 +7,7 @@ tags:
   - Physics
 ---
 
-I had my first published paper the day before yesterday! 
+I had [my first published paper](https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.5c04854) the day before yesterday! 
 
 Although I just made some minor contribution in the project, I am still very happy and I see that as a fresh start. Keep trying, I believe that I can achieve greater goals in the future!
 
