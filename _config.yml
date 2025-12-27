@@ -18,7 +18,8 @@ logo: /assets/images/profile_photo.png
 favicon: /assets/images/favicon-192x192.png
 email: zkx5112@psu.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  This is an awesome description.
+  This is the personal website of Zhiyuan Xi (SmartdogX), a Ph.D. student at
+  Pennsylvania State University.
 twitter_username: username
 github_username: smartdogX
 minimal_mistakes_skin: default
