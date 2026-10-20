@@ -5,6 +5,10 @@ categories:
   - Blog
 tags:
   - life
+excerpt: "当宏大叙事不再赋予人生意义，个体如何面对虚无？从现代性的困惑出发，试着为生命寻找一个安放自身的地方。"
+lang: "zh-CN"
+topic: "reflections"
+featured: true
 ---
 
 最近在读现代性的书，也不能说完全理解，毕竟并非科班。只是思绪很乱，偶然飘过现代性的想法，竟大有感触，随手一记。

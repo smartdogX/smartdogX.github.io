@@ -5,6 +5,9 @@ categories:
   - Blog
 tags:
   - Physics
+excerpt: "Celebrating my first published paper and a new Google Scholar page—a small contribution and a fresh start."
+lang: "en"
+topic: "physics"
 ---
 
 I had [my first published paper](https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.5c04854) the day before yesterday! 

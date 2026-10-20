@@ -1,6 +1,6 @@
 ---
-title: "Posts by Year"
+title: Writing
 permalink: /posts/
 layout: posts
-author_profile: true
+description: "Browse Zhiyuan Xi’s personal essays, reflections, and physics notes in Chinese and English."
 ---

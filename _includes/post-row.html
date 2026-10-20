@@ -1,0 +1,8 @@
+{% assign entry = include.post %}
+{% assign topic = site.data.topics[entry.topic] %}
+<article class="post-entry{% if include.featured %} featured-entry{% endif %}" data-topic="{{ entry.topic | escape }}" data-search="{{ entry.title | append: ' ' | append: entry.subtitle | append: ' ' | append: entry.excerpt | strip_html | normalize_whitespace | escape }}">
+  <div class="entry-meta"><time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: '%b %d, %Y' }}</time><span class="meta-separator" aria-hidden="true">/</span><span>{{ topic.short | default: 'Journal' }}</span><span class="entry-language" lang="{{ entry.lang }}">{% if entry.lang == 'zh-CN' %}中文{% else %}EN{% endif %}</span></div>
+  <h3 class="entry-title" lang="{{ entry.lang }}"><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}<span class="entry-arrow" aria-hidden="true">↗</span></a></h3>
+  {% if entry.subtitle %}<p class="entry-subtitle" lang="{{ entry.lang }}">{{ entry.subtitle | escape }}</p>{% endif %}
+  <p class="entry-excerpt" lang="{{ entry.lang }}">{{ entry.excerpt | strip_html | normalize_whitespace | escape }}</p>
+</article>

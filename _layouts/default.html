@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>{% include head.html %}</head>
+<body class="layout-{{ page.layout }}{% if page.collection == 'posts' %} is-post{% endif %}">
+  {% include header.html %}
+  <main id="main" tabindex="-1">{{ content }}</main>
+  {% include footer.html %}
+</body>
+</html>

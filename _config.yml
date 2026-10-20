@@ -1,130 +1,58 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Personal website of SmartdogX
-logo: /assets/images/profile_photo.png
-favicon: /assets/images/favicon-192x192.png
+title: SmartdogX
+name: Zhiyuan Xi
+description: "Personal essays, notes on physics, and life along the way. A bilingual notebook by Zhiyuan Xi, a physics PhD student at Penn State."
+url: "https://smartdogx.github.io"
+baseurl: ""
+lang: en
 email: zkx5112@psu.edu
-description: >- # this means to ignore newlines until "baseurl:"
-  This is the personal website of Zhiyuan Xi (SmartdogX), a Ph.D. student at
-  Pennsylvania State University.
-twitter_username: username
-github_username: smartdogX
-minimal_mistakes_skin: default
-search: true
-url: "https://smartdogX.github.io"
-baseurl: ""  
+timezone: America/New_York
+author:
+  name: Zhiyuan Xi
+  avatar: /assets/images/profile_photo.webp
+research_url: https://sites.psu.edu/smartdpgxzy/
+scholar_url: https://scholar.google.com/citations?user=tS8aCiAAAAAJ
+github_url: https://github.com/smartdogX
+zhihu_url: https://www.zhihu.com/people/xzy-48-9
 
-
-# Build settings
+# Keep the original category-based addresses for every existing post.
+permalink: /:categories/:title/
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
   math_engine: mathjax
-remote_theme: mmistakes/minimal-mistakes
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .tools
+  - .preview
+  - scripts
+  - node_modules
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
-author:
-  name   : "Zhiyuan Xi"
-  avatar : "/assets/images/profile_photo.webp"
-  bio    : "Never give up! Never, never, never."
-  links:
-    - label: "Wordpress"
-      icon: "fab fa-fw fa-wordpress"
-      url: "https://sites.psu.edu/smartdpgxzy/"
-    - label: "Google scholar"
-      icon: "fa-brands fa-google-scholar"
-      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AElLoL0HU6UFhELGmNjZiE8h5PDubj4FH2xIR3V6B91k9R-VLLCvZk5fyYAMML_o-1_dofpnCvhG_qd8IfZVUw&user=tS8aCiAAAAAJ"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/smartdogX"
-    - label: "Zhihu"
-      icon: "fab fa-fw fa-zhihu"
-      url: "https://www.zhihu.com/people/xzy-48-9"
-    - label: "E-mail"
-      icon: "fa fa-fw fa-envelope"
-      url: "mailto:zkx5112@psu.edu"
-
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/smartdogX"
-    - label: "Google scholar"
-      icon: "fa-brands fa-google-scholar"
-      url: "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AElLoL0HU6UFhELGmNjZiE8h5PDubj4FH2xIR3V6B91k9R-VLLCvZk5fyYAMML_o-1_dofpnCvhG_qd8IfZVUw&user=tS8aCiAAAAAJ"
-    - label: "Zhihu"
-      icon: "fab fa-fw fa-zhihu"
-      url: "https://www.zhihu.com/people/xzy-48-9"
-    - label: "E-mail"
-      icon: "fa fa-fw fa-envelope"
-      url: "mailto:zkx5112@psu.edu"
-    
 
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      show_date: true
-  # _pages
+      topic: reflections
+      lang: en
   - scope:
-      path: "_pages"
+      path: _pages
       type: pages
     values:
       layout: single
-      author_profile: true
+      lang: en
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+feed:
+  path: feed.xml

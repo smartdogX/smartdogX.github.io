@@ -1,0 +1,13 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-nav" class="site-header shell">
+  <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="SmartdogX home">SmartdogX<span class="wordmark-dot" aria-hidden="true">.</span></a>
+  <nav class="site-nav" aria-label="Main navigation">
+    {% for item in site.data.navigation.main %}
+      {% assign current = false %}
+      {% if item.url == page.url %}{% assign current = true %}{% endif %}
+      {% if item.url == '/posts/' and page.collection == 'posts' %}{% assign current = true %}{% endif %}
+      {% if item.url == '/posts/' and page.layout == 'posts' %}{% assign current = true %}{% endif %}
+      <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if current %} aria-current="{% if page.collection == 'posts' %}location{% else %}page{% endif %}"{% endif %}{% if item.external %} class="nav-external"{% endif %}>{{ item.title }}{% if item.external %}<span aria-hidden="true"> ↗</span><span class="sr-only"> (PSU WordPress)</span>{% endif %}</a>
+    {% endfor %}
+  </nav>
+</header>

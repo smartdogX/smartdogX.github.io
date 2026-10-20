@@ -1,0 +1,12 @@
+reflections:
+  label: Life & reflections
+  short: Reflections
+  description: "On belonging, growing up, and finding a way through."
+physics:
+  label: Physics & computing
+  short: Physics & computing
+  description: "A few things learned while doing science."
+site-notes:
+  label: Site notes
+  short: Site notes
+  description: "Small updates about this corner of the internet."

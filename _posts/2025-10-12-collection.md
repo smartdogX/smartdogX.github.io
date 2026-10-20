@@ -5,6 +5,10 @@ categories:
   - Blog
 tags:
   - standard
+excerpt: "从第一次搭建博客，到搬家、学习与申请季：这里保留了旧 WordPress 博客中的生活片段，写于 2024 年至 2025 年。"
+lang: "zh-CN"
+topic: "reflections"
+subtitle: "旧博客存档 · 2024–2025"
 ---
 
 This blog is a collection of my old blogs, 

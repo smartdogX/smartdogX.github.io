@@ -5,6 +5,10 @@ categories:
   - Blog
 tags:
   - life
+excerpt: "Two weeks into the semester, classes, teaching, seminars, and experiments are finding a rhythm. A small record of feeling settled and looking ahead."
+lang: "en"
+topic: "reflections"
+subtitle: "Finding a rhythm in a new semester"
 ---
 
 It has been two weeks since this semester began. In general, I feel that I have been doing well.

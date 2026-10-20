@@ -5,6 +5,10 @@ categories:
   - Dialog
 tags:
   - standard
+excerpt: "The research diary has moved to my PSU WordPress site, while this blog remains a place for personal writing."
+lang: "en"
+topic: "site-notes"
+listed: false
 ---
 
 Good news is that I have transferred my research diary to my [PSU WordPress](https://sites.psu.edu/smartdpgxzy/) now! 
