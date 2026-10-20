@@ -1,0 +1,116 @@
+en:
+  period: "."
+  skip: Skip to content
+  home: Home
+  writing: Writing
+  about: About
+  research: Research diary
+  main_navigation: Main navigation
+  language_switch: Reading language
+  profile_alt: Zhiyuan Xi’s profile illustration
+  notebook: A personal notebook · Since 2024
+  intro: "I’m <a href='/about/'>Zhiyuan Xi</a>, a physics PhD student at Penn State. Here I write about life as it happens, things I’m trying to understand, and the occasional bit of physics."
+  explore: Explore the writing
+  bottle: A message in a bottle
+  quote: "“What matters is not so much what you write, but the possibility that it might cross an ocean and be read by someone else.”"
+  first_entries: From the first entries, August 2024
+  selected: A place to begin
+  selected_other: 从这里读起
+  three_entries: Three entries from the notebook
+  lately: Lately
+  lately_other: 最近写下的
+  all_writing: All writing
+  elsewhere: Elsewhere
+  research_title: Notes from the research side.
+  research_copy: "My formal research diary lives on PSU WordPress: a separate space for the work behind the physics."
+  visit_research: Visit the research diary
+  footer_note: A personal notebook, kept in two languages.
+  scholar: Scholar
+  email: Email
+  footer_built: Written with care. Built with
+  archive_eyebrow: The notebook / 文字存档
+  archive_intro: "Personal essays, passing thoughts, and a little physics.<br>Available in Chinese and English, collected here by year."
+  filter: Filter by topic
+  find_writing: Find writing
+  search_label: Search titles, subtitles, and summaries
+  search_placeholder: Find a thought…
+  no_results: No entries match that search. Try another word or choose a different topic.
+  archive_earlier: Earlier writing from 2024–2025 is preserved in the
+  original_collection: original blog collection
+  back: Back to writing
+  collection_note: An anthology of the original blog, August 2024–July 2025. Each entry retains its original timestamp.
+  outline: In this entry
+  written_by: Written by
+  more_notebook: More from the notebook
+  more_writing: More writing
+  earlier: Earlier
+  later: Later
+  categories: Categories
+  tags: Tags
+  category_intro: Original categories are preserved here. For an overview,
+  category_link: browse the writing by topic
+  tags_intro: Original tags and links are preserved. You can also
+  tags_link: search all writing
+  archived_updates: These site updates have been archived.
+  no_tag: No current entries use this tag.
+  translation_note: Translated from the original Chinese.
+  original_note: Translated from the original English.
+  original_version: Original version
+zh-CN:
+  period: "。"
+  skip: 跳转到正文
+  home: 首页
+  writing: 文章
+  about: 关于
+  research: 科研日记
+  main_navigation: 主导航
+  language_switch: 阅读语言
+  profile_alt: Zhiyuan Xi 的个人头像
+  notebook: 个人随笔 · 始于 2024 年
+  intro: "我是 <a href='/zh/about/'>Zhiyuan Xi</a>，目前在宾夕法尼亚州立大学攻读物理学博士。在这里，我记录日常生活、尚在思索的问题，也偶尔写一点物理。"
+  explore: 开始阅读
+  bottle: 一封漂流瓶里的信
+  quote: "“关键并非在于你写了什么，而是在于它可能漂洋过海并且被另一个人看到。”"
+  first_entries: 写于最初的日记，2024 年 8 月
+  selected: 从这里读起
+  selected_other: A place to begin
+  three_entries: 从笔记中选出的三篇文章
+  lately: 最近写下的
+  lately_other: Lately
+  all_writing: 全部文章
+  elsewhere: 其他地方
+  research_title: 科研中的思考与记录。
+  research_copy: "更正式的科研日记保存在 PSU WordPress，记录物理研究背后的日常工作。"
+  visit_research: 阅读科研日记
+  footer_note: 用中文与英文，记录生活与思考。
+  scholar: 学术主页
+  email: 邮件
+  footer_built: 认真写下。使用
+  archive_eyebrow: 文字存档 / The notebook
+  archive_intro: "生活随笔、零散思考，和一点物理。<br>每篇均可阅读中文或英文版本，按年份收录于此。"
+  filter: 按主题筛选
+  find_writing: 查找文章
+  search_label: 搜索标题、副标题和摘要
+  search_placeholder: 找一段思绪……
+  no_results: 暂时没有符合条件的文章。试试其他关键词，或换一个主题。
+  archive_earlier: 2024—2025 年的早期文字，保存在
+  original_collection: 旧博客文章合集
+  back: 返回文章列表
+  collection_note: 旧博客文章合集，写于 2024 年 8 月至 2025 年 7 月。每则日记均保留原始时间。
+  outline: 本文目录
+  written_by: 作者
+  more_notebook: 阅读更多文章
+  more_writing: 更多文章
+  earlier: 上一篇
+  later: 下一篇
+  categories: 分类
+  tags: 标签
+  category_intro: 这里保留了原有的文章分类。也可以
+  category_link: 按主题浏览全部文章
+  tags_intro: 这里保留了原有标签和链接。也可以
+  tags_link: 搜索全部文章
+  archived_updates: 这些网站动态已归档。
+  no_tag: 暂无使用此标签的文章。
+  translation_note: 由中文原文翻译。
+  original_note: 由英文原文翻译。
+  original_version: 阅读原文

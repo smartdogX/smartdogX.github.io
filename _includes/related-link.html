@@ -1,0 +1,3 @@
+{% assign related_entry = include.post %}
+{% if related_entry.lang != ui_lang %}{% assign related_translation = site.translations | where: 'source_slug', related_entry.slug | where: 'lang', ui_lang | first %}{% if related_translation %}{% assign related_entry = related_translation %}{% endif %}{% endif %}
+<a href="{{ related_entry.url | relative_url }}">{{ related_entry.native_title | default: related_entry.title | escape }}</a>

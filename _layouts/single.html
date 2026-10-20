@@ -1,26 +1,28 @@
 ---
 layout: default
 ---
-{% if page.collection == 'posts' %}
+{% include locale.html %}
+{% if is_article %}
 <article class="article-shell">
   <header class="article-header">
-    <a class="back-link" href="{{ '/posts/' | relative_url }}"><span aria-hidden="true">←</span> Back to writing</a>
-    {% assign topic = site.data.topics[page.topic] %}
-    <div class="article-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %d, %Y' }}</time><span aria-hidden="true">/</span><span>{{ topic.label | default: 'Journal' }}</span><span class="language-label" lang="{{ page.lang }}">{% if page.lang == 'zh-CN' %}中文{% else %}English{% endif %}</span></div>
-    <h1 id="page-title" lang="{{ page.lang }}">{{ page.title | escape }}</h1>
-    {% if page.subtitle %}<p class="article-subtitle" lang="{{ page.lang }}">{{ page.subtitle | escape }}</p>{% endif %}
-    {% if page.url == '/blog/collection/' %}<p class="collection-note">An anthology of the original blog, August 2024–July 2025. Each entry retains its original timestamp.</p>{% endif %}
+    <a class="back-link" href="{{ writing_url | relative_url }}"><span aria-hidden="true">←</span> {{ ui.back }}</a>
+    {% assign article_topic = site.data.topics[source_post.topic] %}
+    <div class="article-meta"><time datetime="{{ source_post.date | date_to_xmlschema }}">{% if ui_lang == 'zh-CN' %}{{ source_post.date | date: '%Y年%m月%d日' }}{% else %}{{ source_post.date | date: '%B %d, %Y' }}{% endif %}</time><span aria-hidden="true">/</span><span>{% if ui_lang == 'zh-CN' %}{{ article_topic.zh_label | default: '随笔' }}{% else %}{{ article_topic.label | default: 'Journal' }}{% endif %}</span><span class="language-label" lang="{{ ui_lang }}">{% if ui_lang == 'zh-CN' %}中文{% else %}English{% endif %}</span></div>
+    <h1 id="page-title" lang="{{ ui_lang }}">{{ display_title | escape }}</h1>
+    {% if page.subtitle %}<p class="article-subtitle" lang="{{ ui_lang }}">{{ page.subtitle | escape }}</p>{% endif %}
+    {% if source_post.slug == 'collection' %}<p class="collection-note">{{ ui.collection_note }}</p>{% endif %}
+    {% if page.collection == 'translations' %}<p class="translation-note">{% if source_post.lang == 'zh-CN' %}{{ ui.translation_note }}{% else %}{{ ui.original_note }}{% endif %} <a href="{{ source_post.url | relative_url }}" lang="{{ source_post.lang }}">{{ ui.original_version }} <span aria-hidden="true">↗</span></a></p>{% endif %}
   </header>
-  <details class="article-outline" hidden><summary>In this entry / 本文目录</summary><ol></ol></details>
-  <div class="prose" lang="{{ page.lang }}">{{ content }}</div>
-  <footer class="article-footer"><span>Written by <a href="{{ '/about/' | relative_url }}">Zhiyuan Xi</a></span><a href="{{ '/posts/' | relative_url }}">More from the notebook <span aria-hidden="true">↗</span></a></footer>
-  <nav class="article-pagination" aria-label="More writing">
+  <details class="article-outline" hidden><summary>{{ ui.outline }}</summary><ol></ol></details>
+  <div class="prose" lang="{{ ui_lang }}">{% if page.collection == 'posts' and native_copy %}{{ native_copy.content | markdownify }}{% else %}{{ content }}{% endif %}</div>
+  <footer class="article-footer"><span>{{ ui.written_by }} <a href="{{ about_url | relative_url }}">Zhiyuan Xi</a></span><a href="{{ writing_url | relative_url }}">{{ ui.more_notebook }} <span aria-hidden="true">↗</span></a></footer>
+  <nav class="article-pagination" aria-label="{{ ui.more_writing }}">
     {% assign older = nil %}{% assign newer = nil %}{% assign found = false %}
-    {% for post in site.posts %}{% if post.url == page.url %}{% assign found = true %}{% elsif post.listed != false %}{% if found %}{% assign older = post %}{% break %}{% else %}{% assign newer = post %}{% endif %}{% endif %}{% endfor %}
-    <div>{% if older %}<span class="eyebrow">← Earlier</span><a href="{{ older.url | relative_url }}">{{ older.title | escape }}</a>{% endif %}</div>
-    <div>{% if newer %}<span class="eyebrow">Later →</span><a href="{{ newer.url | relative_url }}">{{ newer.title | escape }}</a>{% endif %}</div>
+    {% for post in site.posts %}{% if post.url == source_post.url %}{% assign found = true %}{% elsif post.listed != false %}{% if found %}{% assign older = post %}{% break %}{% else %}{% assign newer = post %}{% endif %}{% endif %}{% endfor %}
+    <div>{% if older %}<span class="eyebrow">← {{ ui.earlier }}</span>{% include related-link.html post=older %}{% endif %}</div>
+    <div>{% if newer %}<span class="eyebrow">{{ ui.later }} →</span>{% include related-link.html post=newer %}{% endif %}</div>
   </nav>
 </article>
 {% else %}
-<article class="article-shell page-article"><header class="page-heading"><p class="eyebrow">Zhiyuan Xi / SmartdogX</p><h1 id="page-title">{{ page.title | escape }}<span class="heading-dot">.</span></h1></header><div class="prose" lang="{{ page.lang | default: 'en' }}">{{ content }}</div></article>
+<article class="article-shell page-article"><header class="page-heading"><p class="eyebrow">Zhiyuan Xi / SmartdogX</p><h1 id="page-title">{{ display_title | escape }}<span class="heading-dot">.</span></h1></header><div class="prose" lang="{{ ui_lang }}">{{ content }}</div></article>
 {% endif %}

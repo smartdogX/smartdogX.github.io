@@ -1,8 +1,12 @@
-{% assign entry = include.post %}
-{% assign topic = site.data.topics[entry.topic] %}
-<article class="post-entry{% if include.featured %} featured-entry{% endif %}" data-topic="{{ entry.topic | escape }}" data-search="{{ entry.title | append: ' ' | append: entry.subtitle | append: ' ' | append: entry.excerpt | strip_html | normalize_whitespace | escape }}">
-  <div class="entry-meta"><time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: '%b %d, %Y' }}</time><span class="meta-separator" aria-hidden="true">/</span><span>{{ topic.short | default: 'Journal' }}</span><span class="entry-language" lang="{{ entry.lang }}">{% if entry.lang == 'zh-CN' %}中文{% else %}EN{% endif %}</span></div>
-  <h3 class="entry-title" lang="{{ entry.lang }}"><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}<span class="entry-arrow" aria-hidden="true">↗</span></a></h3>
-  {% if entry.subtitle %}<p class="entry-subtitle" lang="{{ entry.lang }}">{{ entry.subtitle | escape }}</p>{% endif %}
-  <p class="entry-excerpt" lang="{{ entry.lang }}">{{ entry.excerpt | strip_html | normalize_whitespace | escape }}</p>
+{% assign row_source = include.post %}
+{% assign entry = row_source %}
+{% assign indexed_translation = site.translations | where: 'source_slug', row_source.slug | first %}
+{% if row_source.lang != ui_lang and indexed_translation %}{% assign entry = indexed_translation %}{% endif %}
+{% assign entry_title = entry.native_title | default: entry.title %}
+{% assign row_topic = site.data.topics[row_source.topic] %}
+<article class="post-entry{% if include.featured %} featured-entry{% endif %}" data-topic="{{ row_source.topic | escape }}" data-search="{{ entry_title | append: ' ' | append: entry.subtitle | append: ' ' | append: entry.excerpt | append: ' ' | append: row_source.native_title | append: ' ' | append: row_source.title | append: ' ' | append: row_source.excerpt | append: ' ' | append: indexed_translation.title | append: ' ' | append: indexed_translation.subtitle | append: ' ' | append: indexed_translation.excerpt | strip_html | normalize_whitespace | escape }}">
+  <div class="entry-meta"><time datetime="{{ row_source.date | date_to_xmlschema }}">{% if ui_lang == 'zh-CN' %}{{ row_source.date | date: '%Y年%m月%d日' }}{% else %}{{ row_source.date | date: '%b %d, %Y' }}{% endif %}</time><span class="meta-separator" aria-hidden="true">/</span><span>{% if ui_lang == 'zh-CN' %}{{ row_topic.zh_short | default: '随笔' }}{% else %}{{ row_topic.short | default: 'Journal' }}{% endif %}</span><span class="entry-language" lang="{{ ui_lang }}">{% if ui_lang == 'zh-CN' %}中文{% else %}EN{% endif %}</span></div>
+  <h3 class="entry-title" lang="{{ ui_lang }}"><a href="{{ entry.url | relative_url }}">{{ entry_title | escape }}<span class="entry-arrow" aria-hidden="true">↗</span></a></h3>
+  {% if entry.subtitle %}<p class="entry-subtitle" lang="{{ ui_lang }}">{{ entry.subtitle | escape }}</p>{% endif %}
+  <p class="entry-excerpt" lang="{{ ui_lang }}">{{ entry.excerpt | strip_html | normalize_whitespace | escape }}</p>
 </article>

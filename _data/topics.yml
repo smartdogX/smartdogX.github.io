@@ -1,12 +1,18 @@
 reflections:
+  zh_label: 生活与思考
+  zh_short: 生活随想
   label: Life & reflections
   short: Reflections
   description: "On belonging, growing up, and finding a way through."
 physics:
+  zh_label: 物理与计算
+  zh_short: 物理与计算
   label: Physics & computing
   short: Physics & computing
   description: "A few things learned while doing science."
 site-notes:
+  zh_label: 网站动态
+  zh_short: 网站动态
   label: Site notes
   short: Site notes
   description: "Small updates about this corner of the internet."

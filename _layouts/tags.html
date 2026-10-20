@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+{% include locale.html %}
 <div class="shell taxonomy-page">
-  <header class="page-heading"><p class="eyebrow">The original index</p><h1>Tags<span class="heading-dot">.</span></h1><p>Original tags and links are preserved. You can also <a href="{{ '/posts/' | relative_url }}">search all writing</a>.</p></header>
-  <nav class="taxonomy-index" aria-label="Tags">{% for tag in site.tags %}{% assign entries = tag[1] | where_exp: 'post', 'post.listed != false' %}<a href="#{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ entries | size }}</span></a>{% endfor %}</nav>
-  {% for tag in site.tags %}{% assign entries = tag[1] | where_exp: 'post', 'post.listed != false' %}<section class="taxonomy-group" id="{{ tag[0] | slugify }}"><h2>{{ tag[0] }}</h2>{% for post in entries %}{% include post-row.html post=post %}{% else %}<p class="archive-footnote">No current entries use this tag. <a href="{{ '/posts/' | relative_url }}">Explore the writing</a>.</p>{% endfor %}</section>{% endfor %}
+  <header class="page-heading"><p class="eyebrow">{{ ui.archive_eyebrow }}</p><h1>{{ ui.tags }}<span class="heading-dot">.</span></h1><p>{{ ui.tags_intro }} <a href="{{ writing_url | relative_url }}">{{ ui.tags_link }}</a>{{ ui.period }}</p></header>
+  <nav class="taxonomy-index" aria-label="{{ ui.tags }}">{% for tag in site.tags %}{% assign entries = tag[1] | where_exp: 'post', 'post.listed != false' %}<a href="#{{ tag[0] | slugify }}">{{ tag[0] }} <span>{{ entries | size }}</span></a>{% endfor %}</nav>
+  {% for tag in site.tags %}{% assign entries = tag[1] | where_exp: 'post', 'post.listed != false' %}<section class="taxonomy-group" id="{{ tag[0] | slugify }}"><h2>{{ tag[0] }}</h2>{% for post in entries %}{% include post-row.html post=post %}{% else %}<p class="archive-footnote">{{ ui.no_tag }} <a href="{{ writing_url | relative_url }}">{{ ui.explore }}</a>{{ ui.period }}</p>{% endfor %}</section>{% endfor %}
 </div>

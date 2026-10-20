@@ -7,6 +7,8 @@ A personal writing site for Zhiyuan Xi, built with Jekyll and hosted at [smartdo
 | Location | Purpose |
 | --- | --- |
 | `_posts/` | Published writing, with metadata at the top of each Markdown file |
+| `_translations/` | Full counterpart translations, linked to original posts by `source_slug` |
+| `_localized/` | Chinese-only display copies for the two originally mixed-language entries; no separate pages are generated |
 | `_pages/` | About, writing archive, category and tag archives, and the 404 page |
 | `index.html` | Homepage |
 | `_layouts/` and `_includes/` | Local page templates and shared components |
@@ -41,6 +43,31 @@ Write the post below the closing `---`. Use `lang: "en"` for English writing. `s
 Put attachments in `assets/` and link to them with a site path such as `/assets/images/example.png`.
 
 Existing post filenames, dates, categories, and permalinks determine their public URLs. Preserve them when making editorial changes so that old links continue to work. The existing `/posts/`, `/about/`, `/categories/`, and `/tags/` pages remain available. The former `/page2/`, `/page3/`, and `/page4/` pagination addresses now open the complete writing archive.
+
+## English and Chinese
+
+Use the **EN / 中文** switch in the header to open the same page in the other language. The homepage, writing archive, About page, navigation, search messages, and article navigation are localized too. Language links work without JavaScript; the archive search preserves its query and topic when switching.
+
+Original article URLs remain unchanged. Each original has one counterpart in `_translations/`, served at `/en` or `/zh` followed by the original path. Translations are a separate Jekyll collection, so the writing archive contains one entry per essay rather than duplicate posts.
+
+For a new translation, copy the structure of an existing translation file:
+
+```yaml
+---
+layout: single
+title: "Translated title"
+lang: en
+source_slug: short-title
+original_url: /blog/short-title/
+permalink: /en/blog/short-title/
+date: 2026-10-19
+excerpt: "A summary in the target language."
+---
+```
+
+`source_slug` must match the original post's filename slug. Use `lang: zh-CN` and `/zh/...` for a Chinese translation of an English original. Translate the full article below the frontmatter and preserve code, links, and timestamps. `native_title` on an original post supplies its display title without replacing its historical `title` value. Interface text lives in `_data/i18n.yml`.
+
+The original first numbered reflection and old blog collection contain both languages. Their Chinese reading versions live in `_localized/zh-thoughts1.md` and `_localized/zh-collection.md`; the raw `_posts/` bodies remain intact. Keep these display copies in sync if editing those originals later.
 
 ## Preview and build
 

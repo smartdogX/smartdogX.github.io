@@ -3,6 +3,7 @@
 
   const search = document.querySelector('#writing-search');
   const tools = document.querySelector('.archive-tools');
+  const chinese = document.documentElement.lang === 'zh-CN';
   if (search && tools) {
     const buttons = Array.from(tools.querySelectorAll('[data-filter]'));
     const years = Array.from(document.querySelectorAll('.archive-year'));
@@ -26,11 +27,19 @@
         const visibleCount = year.querySelectorAll('.post-entry:not([hidden])').length;
         year.hidden = visibleCount === 0;
         const yearCount = year.querySelector('h2 span');
-        if (yearCount) yearCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'entry' : 'entries'}`;
+        if (yearCount) yearCount.textContent = chinese ? `${visibleCount} 篇文章` : `${visibleCount} ${visibleCount === 1 ? 'entry' : 'entries'}`;
       });
       buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === topic)));
-      status.textContent = `${count} ${count === 1 ? 'entry' : 'entries'}${query || topic !== 'all' ? ' found' : ' in the notebook'}`;
+      status.textContent = chinese ? `${query || topic !== 'all' ? '找到 ' : '共 '}${count} 篇文章` : `${count} ${count === 1 ? 'entry' : 'entries'}${query || topic !== 'all' ? ' found' : ' in the notebook'}`;
       empty.hidden = count !== 0;
+      document.querySelectorAll('.language-switch a').forEach(link => {
+        const languageUrl = new URL(link.href);
+        if (search.value.trim()) languageUrl.searchParams.set('q', search.value.trim());
+        else languageUrl.searchParams.delete('q');
+        if (topic !== 'all') languageUrl.searchParams.set('topic', topic);
+        else languageUrl.searchParams.delete('topic');
+        link.href = languageUrl.pathname + languageUrl.search;
+      });
       if (updateUrl) {
         const url = new URL(window.location.href);
         if (search.value.trim()) url.searchParams.set('q', search.value.trim());

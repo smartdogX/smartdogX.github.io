@@ -1,7 +1,8 @@
+{% include locale.html %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ ui_lang }}">
 <head>{% include head.html %}</head>
-<body class="layout-{{ page.layout }}{% if page.collection == 'posts' %} is-post{% endif %}">
+<body class="layout-{{ page.layout }}{% if is_article %} is-post{% endif %}">
   {% include header.html %}
   <main id="main" tabindex="-1">{{ content }}</main>
   {% include footer.html %}

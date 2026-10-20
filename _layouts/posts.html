@@ -1,18 +1,20 @@
 ---
 layout: default
 ---
+{% include locale.html %}
+{% assign collection_url = '/en/blog/collection/' %}{% if ui_lang == 'zh-CN' %}{% assign collection_url = '/blog/collection/' %}{% endif %}
 <div class="shell archive-page">
-  <header class="page-heading"><p class="eyebrow">The notebook / 文字存档</p><h1>Writing<span class="heading-dot">.</span></h1><p>Personal essays, passing thoughts, and a little physics.<br>Written in Chinese and English, collected here by year.</p></header>
-  <div class="archive-tools" aria-label="Find writing">
-    <div class="topic-filters" role="group" aria-label="Filter by topic"><button type="button" data-filter="all" aria-pressed="true">All writing</button>{% for topic in site.data.topics %}{% assign topic_count = 0 %}{% for post in site.posts %}{% unless post.listed == false %}{% if post.topic == topic[0] %}{% assign topic_count = topic_count | plus: 1 %}{% endif %}{% endunless %}{% endfor %}{% if topic_count > 0 %}<button type="button" data-filter="{{ topic[0] }}" aria-pressed="false">{{ topic[1].short }}</button>{% endif %}{% endfor %}</div>
-    <div class="archive-search"><label class="sr-only" for="writing-search">Search titles, subtitles, and summaries</label><input id="writing-search" type="search" placeholder="Find a thought…" autocomplete="off" aria-controls="writing-results"><span class="search-symbol" aria-hidden="true">⌕</span></div>
+  <header class="page-heading"><p class="eyebrow">{{ ui.archive_eyebrow }}</p><h1>{{ ui.writing }}<span class="heading-dot">.</span></h1><p>{{ ui.archive_intro }}</p></header>
+  <div class="archive-tools" aria-label="{{ ui.find_writing }}">
+    <div class="topic-filters" role="group" aria-label="{{ ui.filter }}"><button type="button" data-filter="all" aria-pressed="true">{{ ui.all_writing }}</button>{% for topic in site.data.topics %}{% assign topic_count = 0 %}{% for post in site.posts %}{% unless post.listed == false %}{% if post.topic == topic[0] %}{% assign topic_count = topic_count | plus: 1 %}{% endif %}{% endunless %}{% endfor %}{% if topic_count > 0 %}<button type="button" data-filter="{{ topic[0] }}" aria-pressed="false">{% if ui_lang == 'zh-CN' %}{{ topic[1].zh_short }}{% else %}{{ topic[1].short }}{% endif %}</button>{% endif %}{% endfor %}</div>
+    <div class="archive-search"><label class="sr-only" for="writing-search">{{ ui.search_label }}</label><input id="writing-search" type="search" placeholder="{{ ui.search_placeholder }}" autocomplete="off" aria-controls="writing-results"><span class="search-symbol" aria-hidden="true">⌕</span></div>
     <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
   </div>
   <div id="writing-results">
     {% assign listed_posts = site.posts | where_exp: 'post', 'post.listed != false' %}
     {% assign years = listed_posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
-    {% for year in years %}<section class="archive-year" aria-labelledby="year-{{ year.name }}"><h2 id="year-{{ year.name }}">{{ year.name }}<span>{{ year.items | size }} entries</span></h2><div class="post-list">{% for post in year.items %}{% include post-row.html post=post %}{% endfor %}</div></section>{% endfor %}
+    {% for year in years %}<section class="archive-year" aria-labelledby="year-{{ year.name }}"><h2 id="year-{{ year.name }}">{{ year.name }}<span>{% if ui_lang == 'zh-CN' %}{{ year.items | size }} 篇文章{% else %}{{ year.items | size }} entries{% endif %}</span></h2><div class="post-list">{% for post in year.items %}{% include post-row.html post=post %}{% endfor %}</div></section>{% endfor %}
   </div>
-  <p id="no-results" class="no-results" hidden>No entries match that search. Try another word or choose a different topic.</p>
-  <p class="archive-footnote">Earlier writing from 2024–2025 is preserved in the <a href="{{ '/blog/collection/' | relative_url }}">original blog collection</a>.</p>
+  <p id="no-results" class="no-results" hidden>{{ ui.no_results }}</p>
+  <p class="archive-footnote">{{ ui.archive_earlier }} <a href="{{ collection_url | relative_url }}">{{ ui.original_collection }}</a>{{ ui.period }}</p>
 </div>

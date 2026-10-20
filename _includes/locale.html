@@ -1,0 +1,24 @@
+{% assign ui_lang = page.lang | default: 'en' %}
+{% assign ui = site.data.i18n[ui_lang] | default: site.data.i18n.en %}
+{% assign home_url = '/' %}
+{% assign writing_url = '/posts/' %}
+{% assign about_url = '/about/' %}
+{% if ui_lang == 'zh-CN' %}{% assign home_url = '/zh/' %}{% assign writing_url = '/zh/posts/' %}{% assign about_url = '/zh/about/' %}{% endif %}
+{% assign is_article = false %}
+{% assign source_post = nil %}
+{% assign counterpart = nil %}
+{% assign native_copy = nil %}
+{% if page.collection == 'posts' %}
+  {% assign is_article = true %}{% assign source_post = page %}
+{% elsif page.collection == 'translations' %}
+  {% assign is_article = true %}{% assign source_post = site.posts | where: 'slug', page.source_slug | first %}
+{% endif %}
+{% assign en_url = page.url %}
+{% assign zh_url = page.translation_url | default: '/zh/' %}
+{% if ui_lang == 'zh-CN' %}{% assign zh_url = page.url %}{% assign en_url = page.translation_url | default: '/' %}{% endif %}
+{% if is_article and source_post %}
+  {% assign counterpart = site.translations | where: 'source_slug', source_post.slug | first %}
+  {% assign native_copy = site.localized | where: 'source_slug', source_post.slug | first %}
+  {% if source_post.lang == 'zh-CN' %}{% assign zh_url = source_post.url %}{% assign en_url = counterpart.url %}{% else %}{% assign en_url = source_post.url %}{% assign zh_url = counterpart.url %}{% endif %}
+{% endif %}
+{% assign display_title = page.native_title | default: page.title %}

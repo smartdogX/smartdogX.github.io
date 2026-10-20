@@ -1,5 +1,6 @@
 ---
 permalink: /about/
+translation_url: /zh/about/
 title: "About"
 layout: single
 lang: "en"

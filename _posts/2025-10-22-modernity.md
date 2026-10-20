@@ -1,5 +1,6 @@
 ---
 title: Thoughts about modernity(现代性批判)
+native_title: "关于现代性的思考"
 last_modified_at: 2025-10-23T00:41:02-04:00
 categories:
   - Blog

@@ -1,5 +1,6 @@
 ---
 title: Collection of old WorldPress blogs
+native_title: "旧博客文章合集"
 last_modified_at: 2025-10-12T1:53:02-04:00
 categories:
   - Blog

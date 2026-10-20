@@ -25,6 +25,11 @@ kramdown:
 
 include:
   - _pages
+collections:
+  translations:
+    output: true
+  localized:
+    output: false
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -40,6 +45,11 @@ plugins:
   - jekyll-feed
 
 defaults:
+  - scope:
+      path: ""
+      type: translations
+    values:
+      layout: single
   - scope:
       path: ""
       type: posts

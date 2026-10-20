@@ -1,5 +1,6 @@
 ---
 title: 关于孤独(About loneliness)
+native_title: "关于孤独"
 last_modified_at: 2025-11-15T18:42:02-04:00
 categories:
   - Blog

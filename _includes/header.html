@@ -1,13 +1,14 @@
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{ ui.skip }}</a>
 <header id="site-nav" class="site-header shell">
-  <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="SmartdogX home">SmartdogX<span class="wordmark-dot" aria-hidden="true">.</span></a>
-  <nav class="site-nav" aria-label="Main navigation">
-    {% for item in site.data.navigation.main %}
-      {% assign current = false %}
-      {% if item.url == page.url %}{% assign current = true %}{% endif %}
-      {% if item.url == '/posts/' and page.collection == 'posts' %}{% assign current = true %}{% endif %}
-      {% if item.url == '/posts/' and page.layout == 'posts' %}{% assign current = true %}{% endif %}
-      <a href="{% if item.external %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}"{% if current %} aria-current="{% if page.collection == 'posts' %}location{% else %}page{% endif %}"{% endif %}{% if item.external %} class="nav-external"{% endif %}>{{ item.title }}{% if item.external %}<span aria-hidden="true"> ↗</span><span class="sr-only"> (PSU WordPress)</span>{% endif %}</a>
-    {% endfor %}
+  <a class="wordmark" href="{{ home_url | relative_url }}" aria-label="SmartdogX · {{ ui.home }}">SmartdogX<span class="wordmark-dot" aria-hidden="true">.</span></a>
+  <nav class="site-nav" aria-label="{{ ui.main_navigation }}">
+    <a href="{{ home_url | relative_url }}"{% if page.layout == 'home' %} aria-current="page"{% endif %}>{{ ui.home }}</a>
+    <a href="{{ writing_url | relative_url }}"{% if is_article or page.layout == 'posts' %} aria-current="{% if is_article %}location{% else %}page{% endif %}"{% endif %}>{{ ui.writing }}</a>
+    <a href="{{ about_url | relative_url }}"{% if page.url == about_url %} aria-current="page"{% endif %}>{{ ui.about }}</a>
+    <a class="nav-external" href="{{ site.research_url }}">{{ ui.research }} <span aria-hidden="true">↗</span><span class="sr-only"> (PSU WordPress)</span></a>
+  </nav>
+  <nav class="language-switch" aria-label="{{ ui.language_switch }}">
+    <a href="{{ en_url | relative_url }}" lang="en" hreflang="en" data-lang="en"{% if ui_lang == 'en' %} aria-current="true"{% endif %}>EN<span class="sr-only"> — English</span></a>
+    <a href="{{ zh_url | relative_url }}" lang="zh-CN" hreflang="zh-CN" data-lang="zh-CN"{% if ui_lang == 'zh-CN' %} aria-current="true"{% endif %}>中文</a>
   </nav>
 </header>

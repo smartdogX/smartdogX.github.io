@@ -31,6 +31,18 @@ h1, h2, h3, p, blockquote { margin: 0; }
 .site-nav a { text-decoration: none; padding: .35rem 0; white-space: nowrap; }
 .site-nav a[aria-current] { border-bottom: 1px solid var(--green); color: var(--green); }
 .site-nav .nav-external { color: var(--muted); }
+.site-nav { margin-left: auto; }
+.language-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--line); flex-shrink: 0; font: 11px/1.4 var(--sans); }
+.language-switch a { display: flex; align-items: center; justify-content: center; min-width: 37px; min-height: 32px; padding: 6px 8px; text-decoration: none; }
+.language-switch a[aria-current] { background: var(--green); color: var(--paper); }
+.language-switch a:hover:not([aria-current]) { background: var(--soft); }
+.translation-note { color: var(--muted); font-size: 11px; margin-top: 18px; }
+.translation-note a { color: var(--green); margin-left: 5px; }
+html:lang(zh-CN) .intro-main h1 { letter-spacing: .01em; line-height: 1.4; font-size: clamp(44px, 5.5vw, 68px); }
+html:lang(zh-CN) .intro-main h1 em { font-style: normal; }
+html:lang(zh-CN) .intro-translation { letter-spacing: .01em; font-family: var(--serif); font-style: italic; }
+html:lang(zh-CN) .intro-note .note-label { font-style: normal; }
+html:lang(zh-CN) .prose h2 { letter-spacing: .02em; }
 .eyebrow { display: block; color: var(--green); font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 .small-mark { display: inline-block; width: 7px; height: 7px; background: var(--green); border-radius: 50%; margin-right: 9px; }
 .home-intro { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 80px; padding: 82px 0 86px; align-items: center; }
@@ -184,7 +196,8 @@ h1, h2, h3, p, blockquote { margin: 0; }
 @media (max-width: 720px) {
   .site-header { min-height: 88px; }
   .wordmark { font-size: 25px; }
-  .site-nav { gap: 19px; font-size: 11px; }
+  .site-nav { gap: 14px; font-size: 11px; }
+  .site-header { column-gap: 18px; }
   .home-intro { grid-template-columns: 1fr; gap: 34px; padding: 48px 0 54px; }
   .intro-main h1 { font-size: 62px; max-width: 620px; }
   .intro-copy { max-width: 570px; font-size: 15px; margin-block: 20px; }
@@ -218,15 +231,23 @@ h1, h2, h3, p, blockquote { margin: 0; }
   .prose { font-size: 19px; }
   .prose:lang(zh-CN) { font-size: 17px; }
 }
+@media (max-width: 640px) {
+  .site-header { min-height: 100px; flex-wrap: wrap; gap: 12px; padding-block: 20px 16px; }
+  .wordmark { order: 1; }
+  .language-switch { order: 2; margin-left: auto; }
+  .site-nav { order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
+}
 @media (max-width: 480px) {
   .shell, .article-shell { width: calc(100% - 40px); }
   .site-header { min-height: 100px; flex-wrap: wrap; justify-content: flex-start; gap: 12px; padding-block: 20px 16px; }
-  .wordmark { font-size: 26px; }
-  .site-nav { width: 100%; justify-content: space-between; gap: 12px; font-size: 11px; }
+  .wordmark { font-size: 26px; order: 1; }
+  .language-switch { order: 2; margin-left: auto; }
+  .site-nav { width: 100%; justify-content: space-between; gap: 12px; font-size: 11px; order: 3; margin-left: 0; }
   .site-nav a { padding-block: 5px; }
   .home-intro { padding-top: 36px; gap: 30px; }
   .eyebrow { font-size: 9px; }
   .intro-main h1 { font-size: clamp(43px, 11.9vw, 56px); margin-top: 20px; }
+  html:lang(zh-CN) .intro-main h1 { font-size: 40px; }
   .intro-translation { font-size: 13px; letter-spacing: .04em; }
   .intro-copy { font-size: 14px; }
   .section-heading { gap: 12px; }

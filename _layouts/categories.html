@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
+{% include locale.html %}
 <div class="shell taxonomy-page">
-  <header class="page-heading"><p class="eyebrow">An earlier way of organizing</p><h1>Categories<span class="heading-dot">.</span></h1><p>Original categories are preserved here. For a more useful overview, <a href="{{ '/posts/' | relative_url }}">browse the writing by topic</a>.</p></header>
-  <nav class="taxonomy-index" aria-label="Categories">{% for category in site.categories %}{% assign entries = category[1] | where_exp: 'post', 'post.listed != false' %}<a href="#{{ category[0] | slugify }}">{{ category[0] }} <span>{{ entries | size }}</span></a>{% endfor %}</nav>
-  {% for category in site.categories %}{% assign entries = category[1] | where_exp: 'post', 'post.listed != false' %}<section class="taxonomy-group" id="{{ category[0] | slugify }}"><h2>{{ category[0] }}</h2>{% for post in entries %}{% include post-row.html post=post %}{% else %}<p class="archive-footnote">These site updates have been archived. <a href="{{ '/posts/' | relative_url }}">Explore the writing</a>.</p>{% endfor %}</section>{% endfor %}
+  <header class="page-heading"><p class="eyebrow">{{ ui.archive_eyebrow }}</p><h1>{{ ui.categories }}<span class="heading-dot">.</span></h1><p>{{ ui.category_intro }} <a href="{{ writing_url | relative_url }}">{{ ui.category_link }}</a>{{ ui.period }}</p></header>
+  <nav class="taxonomy-index" aria-label="{{ ui.categories }}">{% for category in site.categories %}{% assign entries = category[1] | where_exp: 'post', 'post.listed != false' %}<a href="#{{ category[0] | slugify }}">{{ category[0] }} <span>{{ entries | size }}</span></a>{% endfor %}</nav>
+  {% for category in site.categories %}{% assign entries = category[1] | where_exp: 'post', 'post.listed != false' %}<section class="taxonomy-group" id="{{ category[0] | slugify }}"><h2>{{ category[0] }}</h2>{% for post in entries %}{% include post-row.html post=post %}{% else %}<p class="archive-footnote">{{ ui.archived_updates }} <a href="{{ writing_url | relative_url }}">{{ ui.explore }}</a>{{ ui.period }}</p>{% endfor %}</section>{% endfor %}
 </div>
